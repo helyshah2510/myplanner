@@ -1,0 +1,10 @@
+import "./Auth.css";
+
+function Login(){
+    return(
+        <>
+            <h1>hello</h1>
+        </>
+    );
+}
+export default Login;

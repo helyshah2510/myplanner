@@ -1,0 +1,135 @@
+.sidebar {
+  width: 240px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+/* Logo */
+
+.sidebar-logo {
+  padding: var(--space-5) var(--space-4) var(--space-4);
+
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.sidebar-logo span {
+  color: var(--color-accent);
+  font-size: 1.4rem;
+}
+
+/* Navigation */
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+
+  padding: 0 var(--space-3);
+}
+
+.sidebar-link {
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+
+  padding: 0 14px;
+
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 500;
+
+  border-radius: var(--radius-sm);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-link:hover {
+  background: var(--color-surface-muted);
+}
+
+.sidebar-link.active {
+  background: var(--color-accent-tint);
+  color: var(--color-accent);
+}
+
+.sidebar-link svg {
+  flex-shrink: 0;
+}
+
+/* Profile */
+
+.sidebar-profile {
+  margin-top: auto;
+
+  border-top: 1px solid var(--color-border);
+
+  padding: var(--space-3) 14px;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.profile-avatar {
+  width: 38px;
+  height: 38px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--color-accent-tint);
+  color: var(--color-accent-dark);
+
+  font-family: var(--font-display);
+  font-size: var(--fs-body);
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+
+  min-width: 0;
+  flex: 1;
+}
+
+.profile-info strong {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.profile-info span {
+  margin-top: 2px;
+
+  font-size: var(--fs-tiny);
+  color: var(--color-text-muted);
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

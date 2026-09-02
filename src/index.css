@@ -1,0 +1,283 @@
+/* ============================================
+   myPlanner — Design Tokens & Base Styles
+   Pastel blush + coral habit-planner aesthetic
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap');
+
+:root {
+  /* ---- Color palette ---- */
+  --color-bg: #FDF4F1;              /* page background, warm blush */
+  --color-surface: #FFFFFF;         /* cards */
+  --color-surface-muted: #FBEEEA;   /* subtle panel fill */
+
+  --color-text: #2B2530;            /* primary text, warm near-black */
+  --color-text-muted: #8B8594;      /* secondary text / labels */
+  --color-text-faint: #B7AFBB;      /* placeholder / faint text */
+
+  --color-accent: #F17C8D;          /* coral-pink, primary accent */
+  --color-accent-dark: #E4677B;     /* hover/pressed state */
+  --color-accent-tint: #FCE4E7;     /* pill/badge backgrounds */
+
+  --color-success: #6FA37A;         /* completed / green check */
+  --color-success-tint: #E3F0E3;    /* "Daily" tag background */
+
+  --color-purple: #B79AD6;          /* "Weekly" tag accent */
+  --color-purple-tint: #EFE6F7;     /* "Weekly" tag background */
+
+  --color-gold: #F0A857;            /* streak flame / highlight */
+  --color-gold-tint: #FBEBD8;
+
+  --color-border: #F1E3DE;          /* hairline borders/dividers */
+  --color-ring-track: #F9D9DD;      /* progress ring background track */
+
+  --color-note-sage: #E4EAD9;       /* sticky note background */
+  --color-note-pink: #F7D9D2;       /* sticky note background alt */
+
+  /* ---- Typography ---- */
+  --font-display: 'Playfair Display', Georgia, serif;   /* headlines, logo, greeting */
+  --font-body: 'Poppins', -apple-system, sans-serif;      /* nav, labels, body copy */
+  --font-note: 'Caveat', cursive;                          /* handwritten notes, quotes */
+
+  --fs-h1: 2.25rem;
+  --fs-h2: 1.375rem;
+  --fs-body: 0.95rem;
+  --fs-small: 0.8rem;
+  --fs-tiny: 0.7rem;
+
+  /* ---- Shape & elevation ---- */
+  --radius-card: 18px;
+  --radius-pill: 999px;
+  --radius-sm: 10px;
+
+  --shadow-card: 0 4px 20px rgba(43, 37, 48, 0.06);
+  --shadow-card-hover: 0 8px 28px rgba(43, 37, 48, 0.09);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+}
+
+/* ---- Reset & base ---- */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+  font-weight: 600;
+  margin: 0;
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+
+p { margin: 0; }
+
+a { color: inherit; text-decoration: none; }
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+}
+
+/* ---- Layout shell ---- */
+.app-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  padding: var(--space-4) var(--space-3);
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding: var(--space-5) var(--space-5) var(--space-5) var(--space-4);
+}
+
+/* ---- Logo ---- */
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+/* ---- Nav ---- */
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-item:hover { background: var(--color-surface-muted); }
+
+.nav-item.active {
+  background: var(--color-accent-tint);
+  color: var(--color-accent);
+}
+
+/* ---- Cards ---- */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-4);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+/* ---- Buttons ---- */
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  font-size: var(--fs-small);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.btn-primary:hover { background: var(--color-accent-dark); }
+.btn-primary:active { transform: scale(0.97); }
+
+.btn-text {
+  background: none;
+  color: var(--color-accent);
+  font-size: var(--fs-small);
+  font-weight: 500;
+}
+
+/* ---- Tags / pills ---- */
+.tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-tiny);
+  font-weight: 500;
+}
+
+.tag-daily {
+  background: var(--color-success-tint);
+  color: var(--color-success);
+}
+
+.tag-weekly {
+  background: var(--color-purple-tint);
+  color: var(--color-purple);
+}
+
+/* ---- Task row ---- */
+.task-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.task-row:last-child { border-bottom: none; }
+
+.task-row.done { background: var(--color-success-tint); border-radius: var(--radius-sm); }
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.checkbox.checked {
+  background: var(--color-success);
+  border-color: var(--color-success);
+  color: #fff;
+}
+
+/* ---- Progress ring ---- */
+.ring-track { stroke: var(--color-ring-track); }
+.ring-progress { stroke: var(--color-accent); }
+.ring-progress-alt { stroke: var(--color-success); }
+
+/* ---- Chart ---- */
+.chart-line { stroke: var(--color-accent); }
+.chart-fill { fill: var(--color-accent-tint); opacity: 0.6; }
+.chart-dot { fill: var(--color-accent); }
+.chart-grid { stroke: var(--color-border); }
+
+/* ---- Sticky note ---- */
+.sticky-note {
+  font-family: var(--font-note);
+  font-size: 1.15rem;
+  line-height: 1.5;
+  padding: var(--space-4);
+  border-radius: 4px;
+  transform: rotate(-1.5deg);
+  box-shadow: var(--shadow-card);
+}
+
+.sticky-note.sage { background: var(--color-note-sage); }
+.sticky-note.pink { background: var(--color-note-pink); }
+
+/* ---- Quote / affirmation text ---- */
+.quote {
+  font-family: var(--font-note);
+  font-size: 1.3rem;
+  color: var(--color-text-muted);
+}
+
+/* ---- Streak card ---- */
+.streak-flame { color: var(--color-gold); }
+
+/* ---- Utility ---- */
+.text-muted { color: var(--color-text-muted); }
+.text-faint { color: var(--color-text-faint); }
