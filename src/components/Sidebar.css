@@ -2,42 +2,144 @@
   width: 240px;
   height: 100vh;
 
+  flex-shrink: 0;
+
+  position: sticky;
+  top: 0;
+
   display: flex;
   flex-direction: column;
 
   background: var(--color-surface);
   border-right: 1px solid var(--color-border);
 
-  position: fixed;
-  left: 0;
-  top: 0;
+  box-sizing: border-box;
+
+  transition: width 0.25s ease;
 }
 
-/* Logo */
+
+/* =========================
+   COLLAPSED SIDEBAR
+========================= */
+
+.sidebar.collapsed {
+  width: 72px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
 
 .sidebar-logo {
-  padding: var(--space-5) var(--space-4) var(--space-4);
+  height: 72px;
+
+  padding: 0 var(--space-4);
 
   font-family: var(--font-display);
   font-size: 1.25rem;
   font-weight: 600;
+
   color: var(--color-text);
 
   display: flex;
   align-items: center;
+
   gap: var(--space-1);
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  box-sizing: border-box;
 }
 
-.sidebar-logo span {
+.logo-text {
+  transition:
+    opacity 0.2s ease,
+    width 0.25s ease;
+}
+
+.logo-star {
   color: var(--color-accent);
   font-size: 1.4rem;
+
+  flex-shrink: 0;
 }
 
-/* Navigation */
+
+/* =========================
+   COLLAPSED LOGO
+========================= */
+
+.sidebar.collapsed .sidebar-logo {
+  justify-content: center;
+  padding: 0;
+}
+
+.sidebar.collapsed .logo-text {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+
+/* =========================
+   COLLAPSE BUTTON
+========================= */
+
+.sidebar-toggle {
+  position: absolute;
+
+  top: 58px;
+  right: -12px;
+
+  width: 24px;
+  height: 24px;
+
+  padding: 0;
+
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  z-index: 10;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
+}
+
+.sidebar-toggle:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+}
+
+.sidebar-toggle svg {
+  transition: transform 0.25s ease;
+}
+
+.sidebar-toggle .rotate {
+  transform: rotate(180deg);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
+
   gap: var(--space-1);
 
   padding: 0 var(--space-3);
@@ -48,17 +150,27 @@
 
   display: flex;
   align-items: center;
+
   gap: var(--space-2);
 
   padding: 0 14px;
 
   color: var(--color-text-muted);
+
   font-family: var(--font-body);
   font-size: var(--fs-small);
   font-weight: 500;
 
   border-radius: var(--radius-sm);
-  transition: background 0.15s ease, color 0.15s ease;
+
+  white-space: nowrap;
+  overflow: hidden;
+
+  text-decoration: none;
+
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
 }
 
 .sidebar-link:hover {
@@ -74,7 +186,34 @@
   flex-shrink: 0;
 }
 
-/* Profile */
+
+/* =========================
+   COLLAPSED NAVIGATION
+========================= */
+
+.sidebar.collapsed .sidebar-nav {
+  padding: 0 12px;
+}
+
+.sidebar.collapsed .sidebar-link {
+  justify-content: center;
+
+  padding-left: 0;
+  padding-right: 0;
+
+  gap: 0;
+}
+
+.sidebar.collapsed .sidebar-link span {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+
+/* =========================
+   PROFILE
+========================= */
 
 .sidebar-profile {
   margin-top: auto;
@@ -85,7 +224,10 @@
 
   display: flex;
   align-items: center;
+
   gap: var(--space-2);
+
+  overflow: hidden;
 }
 
 .profile-avatar {
@@ -114,12 +256,16 @@
 
   min-width: 0;
   flex: 1;
+
+  white-space: nowrap;
 }
 
 .profile-info strong {
   font-family: var(--font-body);
+
   font-size: var(--fs-small);
   font-weight: 600;
+
   color: var(--color-text);
 }
 
@@ -132,4 +278,32 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+
+/* =========================
+   PROFILE CHEVRON
+========================= */
+
+.profile-chevron {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   COLLAPSED PROFILE
+========================= */
+
+.sidebar.collapsed .sidebar-profile {
+  justify-content: center;
+
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.sidebar.collapsed .profile-info,
+.sidebar.collapsed .profile-chevron {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
 }

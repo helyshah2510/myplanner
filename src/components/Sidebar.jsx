@@ -1,4 +1,6 @@
 import "./Sidebar.css";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
 import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
@@ -9,9 +11,13 @@ import {
   BookOpen,
   Settings,
   ChevronDown,
+  ChevronLeft,
 } from "lucide-react";
 
 function Sidebar() {
+  const [collapsed, setCollapsed] = useState(false);
+  const [user, setUser] = useState(null);
+
   const navItems = [
     {
       name: "Dashboard",
@@ -50,13 +56,50 @@ function Sidebar() {
     },
   ];
 
+  useEffect(() => {
+    const getCurrentUser = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      setUser(user);
+    };
+
+    getCurrentUser();
+  }, []);
+
+  const displayName =
+  typeof user?.user_metadata?.name === "string" &&
+  user.user_metadata.name.trim()
+    ? user.user_metadata.name
+    : user?.email ?? "";
+
+  const avatarLetter = displayName
+  ? displayName.charAt(0).toUpperCase()
+  : "?";
+
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${collapsed ? "collapsed" : ""}`}>
 
       {/* Logo */}
       <div className="sidebar-logo">
-        myPlanner <span>✧</span>
+        <span className="logo-text">myPlanner</span>
+        <span className="logo-star">✧</span>
       </div>
+
+      {/* Collapse Button */}
+      <button
+        type="button"
+        className="sidebar-toggle"
+        onClick={() => setCollapsed(!collapsed)}
+        aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+        title={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+      >
+        <ChevronLeft
+          size={18}
+          className={collapsed ? "rotate" : ""}
+        />
+      </button>
 
       {/* Navigation */}
       <nav className="sidebar-nav">
@@ -70,6 +113,7 @@ function Sidebar() {
               className={({ isActive }) =>
                 isActive ? "sidebar-link active" : "sidebar-link"
               }
+              title={collapsed ? item.name : ""}
             >
               <Icon size={20} strokeWidth={1.8} />
               <span>{item.name}</span>
@@ -82,15 +126,18 @@ function Sidebar() {
       <div className="sidebar-profile">
 
         <div className="profile-avatar">
-          H
+          {avatarLetter}
         </div>
 
         <div className="profile-info">
-          <strong>Hely</strong>
-          <span>hely@example.com</span>
+          <strong>{displayName}</strong>
+          <span>{user?.email}</span>
         </div>
 
-        <ChevronDown size={16} />
+        <ChevronDown
+          className="profile-chevron"
+          size={16}
+        />
 
       </div>
 

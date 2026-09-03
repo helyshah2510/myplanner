@@ -1,0 +1,23 @@
+.journal-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--color-background);
+}
+
+.journal-main {
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.journal-content {
+  display: grid;
+  grid-template-columns: 560px minmax(400px, 1fr);
+  gap: var(--space-5);
+  align-items: start;
+}
+
+.journal-left {
+  min-width: 0;
+}

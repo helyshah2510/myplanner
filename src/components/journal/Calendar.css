@@ -1,0 +1,120 @@
+.journal-calendar {
+  width: 100%;
+  max-width: 500px;
+  max-height: 300px;
+}
+
+/* =========================
+   Calendar Header
+   ========================= */
+
+.journal-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.journal-calendar-header h2 {
+  font-size: 1.35rem;
+  text-transform: capitalize;
+}
+
+.journal-calendar-actions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.journal-calendar-actions button {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-surface-muted);
+  color: var(--color-text);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.journal-calendar-actions button:hover {
+  background: var(--color-accent-tint);
+  color: var(--color-accent);
+}
+
+/* =========================
+   Weekday Names
+   ========================= */
+
+.journal-calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: var(--space-2);
+}
+
+.journal-calendar-weekdays span {
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: var(--fs-tiny);
+  font-weight: 600;
+}
+
+/* =========================
+   Calendar Grid
+   ========================= */
+
+.journal-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.journal-calendar-day {
+  min-height: 30px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: var(--color-text);
+  transition: background 0.15s ease;
+}
+
+.journal-calendar-day:not(:empty):hover {
+  background: var(--color-surface-muted);
+}
+
+.journal-day-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-small);
+}
+
+/* =========================
+   Today
+   ========================= */
+
+.journal-calendar-day.today .journal-day-number {
+  background: var(--color-accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* =========================
+   Entry Dot
+   ========================= */
+
+.journal-entry-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  position: absolute;
+  bottom: 7px;
+}
