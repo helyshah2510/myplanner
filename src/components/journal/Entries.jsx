@@ -4,6 +4,7 @@ function Entries({
   entries,
   onNewEntry,
   onSelectEntry,
+  onDeleteEntry,
   loading,
 }) {
   return (
@@ -36,20 +37,33 @@ function Entries({
           </div>
         ) : (
           entries.map((entry) => (
-            <button
-              className="journal-entry-row"
-              key={entry.id}
-              type="button"
-              onClick={() => onSelectEntry(entry)}
-            >
-              <span className="journal-entry-title">
-                {entry.title}
-              </span>
+           <div
+  className="journal-entry-row"
+  key={entry.id}
+>
+  <button
+    className="journal-entry-content"
+    type="button"
+    onClick={() => onSelectEntry(entry)}
+  >
+    <span className="journal-entry-title">
+      {entry.title}
+    </span>
 
-              <span className="journal-entry-mood">
-                {entry.mood || "🌸"}
-              </span>
-            </button>
+    <span className="journal-entry-mood">
+      {entry.mood || "🌸"}
+    </span>
+  </button>
+
+  <button
+    className="journal-entry-delete"
+    type="button"
+    onClick={() => onDeleteEntry(entry.id)}
+    aria-label="Delete entry"
+  >
+    🗑️
+  </button>
+</div>
           ))
         )}
 

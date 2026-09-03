@@ -7,7 +7,7 @@ import Entries from "../components/journal/Entries";
 import Diary from "../components/journal/Diary";
 import Header from "../components/Header";
 
-import { getJournalEntries,createJournalEntry,updateJournalEntry } from "../lib/journal";
+import { getJournalEntries,createJournalEntry,updateJournalEntry,deleteJournalEntry } from "../lib/journal";
 
 function Journal() {
   const [entries, setEntries] = useState([]);
@@ -101,7 +101,20 @@ function Journal() {
             console.error("Error saving journal entry:", err);
             setError("Unable to save your journal entry.");
         }
-        };
+    };
+    const handleDeleteEntry = async (entryId) => {
+  try {
+    await deleteJournalEntry(entryId);
+
+    setEntries((currentEntries) =>
+      currentEntries.filter(
+        (entry) => entry.id !== entryId
+      )
+    );
+  } catch (err) {
+    console.error("Error deleting journal entry:", err);
+  }
+};
 
   return (
     <div className="journal-layout">
@@ -125,11 +138,12 @@ function Journal() {
             />
 
             <Entries
-              entries={entries}
-              onNewEntry={handleNewEntry}
-              onSelectEntry={handleSelectEntry}
-              loading={loading}
-            />
+  entries={entries}
+  onNewEntry={handleNewEntry}
+  onSelectEntry={handleSelectEntry}
+  onDeleteEntry={handleDeleteEntry}
+  loading={loading}
+/>
 
           </div>
 

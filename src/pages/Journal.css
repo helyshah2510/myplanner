@@ -21,3 +21,38 @@
 .journal-left {
   min-width: 0;
 }
+
+.journal-entry-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+
+  padding: 14px 4px;
+
+  background: transparent;
+  color: var(--color-text);
+  text-align: left;
+}
+
+.journal-entry-delete {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  background: transparent;
+  border-radius: 50%;
+
+  font-size: 0.85rem;
+  opacity: 0.5;
+}
+
+.journal-entry-delete:hover {
+  background: var(--color-accent-tint);
+  opacity: 1;
+}
