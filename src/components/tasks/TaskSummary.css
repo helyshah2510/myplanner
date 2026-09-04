@@ -1,0 +1,70 @@
+.task-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.task-summary-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  min-height: 130px;
+  padding: 22px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.task-summary-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  background: var(--color-accent-tint);
+  color: var(--color-accent-dark);
+  border-radius: 50%;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.task-summary-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-summary-content strong {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  line-height: 1.1;
+  color: var(--color-text);
+  margin-bottom: 4px;
+}
+
+.task-summary-content span {
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+.task-progress {
+  width: 150px;
+  height: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+
+  background: var(--color-accent-tint);
+  border-radius: var(--radius-pill);
+}
+
+.task-progress-fill {
+  width: 60%;
+  height: 100%;
+  background: var(--color-accent);
+  border-radius: var(--radius-pill);
+}

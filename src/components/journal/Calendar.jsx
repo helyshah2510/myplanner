@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Calendar.css";
 
-function Calendar() {
+function Calendar({entries}) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   const year = currentDate.getFullYear();
@@ -30,6 +30,11 @@ function Calendar() {
       month === today.getMonth() &&
       year === today.getFullYear()
     );
+  };
+  const hasEntry = (day) => {
+    const calendarDate = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+
+    return entries.some((entry) => entry.entry_date === calendarDate);
   };
 
   const calendarDays = [];
@@ -88,9 +93,12 @@ function Calendar() {
             >
                 {day && (
                 <>
-                    <span className="journal-day-number">{day}</span>
+                  <span className="journal-day-number">{day}</span>
 
-                    {/* Entry dot will be connected to real entries later */}
+                  {/* Entry dot will be connected to real entries */}
+                  {hasEntry(day) && (
+                    <span className="journal-entry-dot"></span>
+                  )}
                 </>
                 )}
             </div>

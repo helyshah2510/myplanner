@@ -1,0 +1,112 @@
+.task-form {
+    margin-top: var(--space-5);
+    padding: 24px;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+}
+
+.task-form-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: var(--space-4);
+}
+
+.task-form-header h2 {
+    font-family: var(--font-display);
+    font-size: var(--fs-h2);
+    color: var(--color-text);
+}
+
+/* Form fields */
+
+.task-form-fields {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--space-4);
+}
+
+.task-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.task-form-group label {
+    font-size: var(--fs-small);
+    font-weight: 500;
+    color: var(--color-text);
+}
+
+.task-form-group input {
+    width: 100%;
+    padding: 11px 14px;
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    background: var(--color-surface-muted);
+    color: var(--color-text);
+
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+
+    outline: none;
+    transition: border-color 0.15s ease,
+                background 0.15s ease;
+}
+
+.task-form-group input:focus {
+    border-color: var(--color-accent);
+    background: var(--color-surface);
+}
+
+.task-form-group input::placeholder {
+    color: var(--color-text-faint);
+}
+
+/* Buttons */
+
+.task-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-2);
+
+    margin-top: var(--space-4);
+}
+
+.task-form-cancel,
+.task-form-create {
+    padding: 10px 20px;
+
+    border-radius: var(--radius-sm);
+
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+
+    cursor: pointer;
+}
+
+.task-form-cancel {
+    border: 1px solid var(--color-border);
+    background: var(--color-surface);
+    color: var(--color-text);
+}
+
+.task-form-cancel:hover {
+    background: var(--color-surface-muted);
+}
+
+.task-form-create {
+    border: 1px solid var(--color-accent);
+    background: var(--color-accent);
+    color: #ffffff;
+}
+
+.task-form-create:hover {
+    background: var(--color-accent-dark);
+}

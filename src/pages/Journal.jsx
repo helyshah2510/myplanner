@@ -60,61 +60,61 @@ function Journal() {
      Save Entry
      ========================= */
 
-    const handleSaveEntry = async (entryData) => {
-        try {
-            setError("");
+  const handleSaveEntry = async (entryData) => {
+    try {
+      setError("");
 
-            if (selectedEntry) {
-            // Update existing entry
-            const updatedEntry = await updateJournalEntry(
-                selectedEntry.id,
-                entryData
-            );
+      if (selectedEntry) {
+        // Update existing entry
+        const updatedEntry = await updateJournalEntry(
+          selectedEntry.id,
+          entryData
+        );
 
-            setEntries((currentEntries) =>
-                currentEntries.map((entry) =>
-                entry.id === updatedEntry.id
-                    ? updatedEntry
-                    : entry
-                )
-            );
+        setEntries((currentEntries) =>
+          currentEntries.map((entry) =>
+            entry.id === updatedEntry.id
+            ? updatedEntry
+            : entry
+          )
+        );
 
-            // Clear diary after updating
-            setSelectedEntry(null);
+        // Clear diary after updating
+        setSelectedEntry(null);
 
-            } else {
-            // Create new entry
-            const newEntry = await createJournalEntry(
-                entryData
-            );
+      } else {
+        // Create new entry
+        const newEntry = await createJournalEntry(
+          entryData
+        );
 
-            setEntries((currentEntries) => [
-                newEntry,
-                ...currentEntries,
-            ]);
+        setEntries((currentEntries) => [
+          newEntry,
+          ...currentEntries,
+        ]);
 
-            // Clear diary after saving
-            setSelectedEntry(null);
-            }
+        // Clear diary after saving
+        setSelectedEntry(null);
+      }
 
-        } catch (err) {
-            console.error("Error saving journal entry:", err);
-            setError("Unable to save your journal entry.");
-        }
-    };
-    const handleDeleteEntry = async (entryId) => {
-  try {
-    await deleteJournalEntry(entryId);
+    } catch (err) {
+      console.error("Error saving journal entry:", err);
+      setError("Unable to save your journal entry.");
+    }
+  };
+  const handleDeleteEntry = async (entryId) => {
+    try {
+      await deleteJournalEntry(entryId);
 
-    setEntries((currentEntries) =>
-      currentEntries.filter(
-        (entry) => entry.id !== entryId
-      )
-    );
-  } catch (err) {
-    console.error("Error deleting journal entry:", err);
-  }
-};
+      setEntries((currentEntries) =>
+        currentEntries.filter(
+          (entry) => entry.id !== entryId
+        )
+      );
+    } catch (err) {
+      console.error("Error deleting journal entry:", err);
+    }
+  };
 
   return (
     <div className="journal-layout">
@@ -138,18 +138,18 @@ function Journal() {
             />
 
             <Entries
-  entries={entries}
-  onNewEntry={handleNewEntry}
-  onSelectEntry={handleSelectEntry}
-  onDeleteEntry={handleDeleteEntry}
-  loading={loading}
-/>
+            entries={entries}
+            onNewEntry={handleNewEntry}
+            onSelectEntry={handleSelectEntry}
+            onDeleteEntry={handleDeleteEntry}
+            loading={loading}
+            />
 
           </div>
 
           <Diary
-            selectedEntry={selectedEntry}
-            onSave={handleSaveEntry}
+          selectedEntry={selectedEntry}
+          onSave={handleSaveEntry}
           />
 
         </div>
