@@ -1,0 +1,201 @@
+.habit-card {
+    padding: 22px;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    background: white;
+}
+
+.habit-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.habit-card-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.habit-icon {
+    font-size: 20px;
+}
+
+.habit-card-title h3 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.habit-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.habit-checkbox {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    background: white;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.habit-checkbox.checked {
+    border-color: #d87991;
+    background: #d87991;
+}
+
+.habit-streak {
+    display: block;
+    margin-top: 10px;
+    color: #888;
+    font-size: 13px;
+}
+
+
+/* WEEK */
+
+.habit-week {
+    margin-top: 16px;
+}
+
+.habit-week-labels,
+.habit-week-progress {
+    display: grid;
+    grid-template-columns: repeat(7, 32px);
+    gap: 9px;
+}
+
+.habit-week-labels {
+    margin-bottom: 7px;
+}
+
+.habit-week-labels span {
+    text-align: center;
+    color: #999;
+    font-size: 11px;
+}
+
+.habit-day {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #eee;
+    color: transparent;
+    font-size: 13px;
+}
+
+.habit-day.completed {
+    background: #2fa84f;
+    color: white;
+}
+
+.habit-check.checked {
+    border-color: #d87991;
+    background: #d87991;
+}
+
+
+.habit-card-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.habit-icon {
+    font-size: 22px;
+}
+
+.habit-card-title h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+.habit-menu {
+    border: none;
+    background: transparent;
+    color: #888;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.add-habit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 130px;
+    border: 2px dashed #ddd;
+    border-radius: 18px;
+    background: transparent;
+    cursor: pointer;
+}
+
+.add-habit-card span {
+    font-size: 25px;
+    color: #c46d84;
+}
+
+.add-habit-card strong {
+    margin-top: 6px;
+    font-size: 15px;
+}
+
+.add-habit-card small {
+    margin-top: 4px;
+    color: #999;
+}
+
+.habit-menu-wrapper {
+    position: relative;
+}
+
+.habit-menu-dropdown {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    width: 170px;
+    padding: 6px;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    background: white;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.habit-menu-dropdown button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 10px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    text-align: left;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.habit-menu-dropdown button:hover {
+    background: #f6f6f6;
+}
+
+.habit-menu-delete {
+    color: #d8455c;
+}
+
+.habit-menu-delete:hover {
+    background: #fdecef !important;
+}

@@ -36,7 +36,7 @@ function Sidebar() {
     },
     {
       name: "Habits",
-      path: "/habits",
+      path: "/habit",
       icon: Heart,
     },
     {

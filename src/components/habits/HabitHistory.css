@@ -1,0 +1,123 @@
+.habit-history {
+    width: 480px;
+    max-width: calc(100% - 40px);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 25px;
+    border-radius: 20px;
+    background: white;
+}
+
+.habit-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 22px;
+}
+
+.habit-history-icon {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.habit-history-header h2 {
+    display: inline;
+    margin: 0;
+    font-size: 18px;
+}
+
+.habit-history-header p {
+    margin: 6px 0 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.habit-history-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 22px;
+}
+
+.habit-history-stats div {
+    padding: 14px 10px;
+    border-radius: 12px;
+    background: #faf5f6;
+    text-align: center;
+}
+
+.habit-history-stats strong {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+.habit-history-stats span {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #999;
+}
+
+.habit-history-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 14px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.habit-history-nav button {
+    border: none;
+    background: #f3f3f3;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.habit-history-weekdays,
+.habit-history-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 6px;
+}
+
+.habit-history-weekdays span {
+    text-align: center;
+    font-size: 11px;
+    color: #999;
+    margin-bottom: 6px;
+}
+
+.habit-history-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #f3f3f3;
+    font-size: 12px;
+    color: #666;
+}
+
+.habit-history-day.blank {
+    background: transparent;
+}
+
+.habit-history-day.done {
+    background: #d6efd9;
+    color: #3a8a45;
+}
+
+.habit-history-day.missed {
+    background: #f9d9df;
+    color: #c8455f;
+}
+
+.habit-history-day.paused {
+    background: #f0e6d8;
+    color: #a97f3f;
+}

@@ -1,0 +1,31 @@
+.habit-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.habit-summary-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #eee;
+}
+
+.habit-summary-icon {
+    font-size: 25px;
+}
+
+.habit-summary-card strong {
+    display: block;
+    font-size: 24px;
+}
+
+.habit-summary-card span {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+    font-size: 14px;
+}

@@ -1,0 +1,154 @@
+.habit-form-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 1000;
+}
+
+.habit-form {
+    width: 420px;
+    max-width: calc(100% - 40px);
+    padding: 25px;
+    border-radius: 20px;
+    background: white;
+}
+
+.habit-form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.habit-form h2 {
+    margin: 0;
+}
+
+.habit-form p {
+    margin: 6px 0 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.habit-form-close {
+    border: none;
+    background: transparent;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.habit-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.habit-form label {
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.habit-form input {
+    margin-bottom: 18px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+}
+
+.habit-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.habit-form-buttons button {
+    padding: 11px 17px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.habit-form-buttons button:last-child {
+    background: #d87991;
+    color: white;
+}
+
+.icon-picker {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.icon-option {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+    cursor: pointer;
+}
+
+.icon-option.selected {
+    border-color: #d87991;
+    background: #fdf0f3;
+}
+
+.frequency-options {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 14px;
+}
+
+.frequency-choice {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    cursor: pointer;
+}
+
+.custom-days {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.day-pill {
+    padding: 8px 12px;
+    font-size: 13px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background: white;
+    cursor: pointer;
+}
+
+.day-pill.selected {
+    border-color: #d87991;
+    background: #d87991;
+    color: white;
+}
+
+.habit-form select {
+    margin-bottom: 18px;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}

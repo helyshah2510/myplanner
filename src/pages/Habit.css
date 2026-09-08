@@ -1,0 +1,81 @@
+.habit-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--color-background);
+}
+
+.habit-main {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.habit-page-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.habit-page-header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.habit-page-header p {
+    margin: 6px 0 0;
+    color: #777;
+}
+
+.add-habit-button {
+    border: none;
+    border-radius: 12px;
+    padding: 13px 20px;
+    background: #d87991;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.add-habit-button:hover {
+    opacity: 0.9;
+}
+
+.today-habits-section {
+    margin-top: 35px;
+}
+
+.today-habits-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.today-habits-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.habit-date {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: white;
+}
+
+.habit-date button {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.habit-date span {
+    font-size: 14px;
+}
