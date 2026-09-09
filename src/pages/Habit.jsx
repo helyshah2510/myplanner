@@ -212,7 +212,14 @@ function Habit() {
                         <h2>Today's Habits</h2>
                         <div className="habit-date">
                             <button>‹</button>
-                            <span>Mon, Sep 8, 2026</span>
+                            <span>
+                                {new Date().toLocaleDateString("en-US", {
+                                    weekday: "short",
+                                    month: "short",
+                                    day: "numeric",
+                                    year: "numeric",
+                                })}
+                            </span>
                             <button>›</button>
                         </div>
                     </div>
