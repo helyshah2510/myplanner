@@ -121,3 +121,8 @@
     background: #f0e6d8;
     color: #a97f3f;
 }
+
+.habit-history-day.none {
+    background: #f3f3f3;
+    color: #ccc;
+}
