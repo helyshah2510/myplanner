@@ -1,0 +1,53 @@
+.this-week {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.this-week-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.this-week-header h2 {
+    margin: 0;
+}
+
+.this-week-header span {
+    color: #999;
+    font-size: 14px;
+}
+
+.this-week-header > strong {
+    font-size: 24px;
+}
+
+.week-list {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.week-day {
+    text-align: center;
+}
+
+.week-day-name {
+    color: #777;
+    font-size: 14px;
+}
+
+.week-day-progress {
+    margin-top: 8px;
+}
+
+.week-day-progress strong {
+    display: block;
+}
+
+.week-day-progress span {
+    color: #999;
+    font-size: 12px;
+}

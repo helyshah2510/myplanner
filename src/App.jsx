@@ -7,6 +7,7 @@ import Journal from "./pages/Journal";
 import Tasks from "./pages/Tasks";
 import Habit from "./pages/Habit";
 import Analytics from "./pages/Analytics";
+import Today from "./pages/Today";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/tasks" element={<Tasks/>}/>
         <Route path="/habit" element={<Habit/>}/>
         <Route path="/analytics" element={<Analytics/>}/>
+        <Route path="/today" element={<Today/>}/>
       </Routes>
   );
 }

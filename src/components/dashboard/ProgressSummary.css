@@ -1,0 +1,44 @@
+.progress-summary {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.progress-header h2 {
+    margin: 0;
+}
+
+.progress-header span {
+    color: #999;
+    font-size: 14px;
+}
+
+.progress-percent {
+    margin: 20px 0;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.progress-stats {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.progress-stats strong {
+    display: block;
+    font-size: 20px;
+}
+
+.progress-stats span {
+    color: #777;
+    font-size: 13px;
+}

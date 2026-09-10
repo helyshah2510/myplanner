@@ -1,0 +1,63 @@
+.today-layout {
+    display: flex;
+}
+
+.today-main {
+    flex: 1;
+    padding: 30px;
+}
+
+.today-main h1 {
+    margin-bottom: 5px;
+}
+
+.today-main > p {
+    margin-top: 0;
+}
+
+.today-tasks,
+.today-habits {
+    margin-top: 30px;
+    padding: 24px;
+    background: white;
+    border-radius: 18px;
+    border: 1px solid #eee;
+}
+
+.today-task {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.today-task button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.today-task .completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.today-habit {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+}
+
+.today-habit button {
+    border: none;
+    background: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.today-habit .completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}

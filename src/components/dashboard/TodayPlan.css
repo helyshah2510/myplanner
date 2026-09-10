@@ -1,0 +1,41 @@
+.today-plan {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    padding: 24px;
+}
+
+.today-plan-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.today-plan-header h2 {
+    margin: 0;
+}
+
+.today-plan-header span {
+    color: #999;
+    font-size: 14px;
+}
+
+.today-plan-list {
+    margin-top: 18px;
+}
+
+.plan-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0;
+}
+
+.plan-check {
+    font-size: 20px;
+}
+
+.plan-item .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+}

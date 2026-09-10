@@ -1,0 +1,41 @@
+.dashboard-layout {
+    display: flex;
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 30px;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.dashboard-left,
+.dashboard-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dashboard-right .dashboard-card {
+    width: 80%;
+}
+
+.dashboard-card {
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 18px;
+    padding: 20px;
+}
+
+.dashboard-card h2 {
+    margin: 0;
+}
+
+.quote-placeholder {
+    min-height: 180px;
+}
