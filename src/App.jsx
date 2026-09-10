@@ -8,6 +8,7 @@ import Tasks from "./pages/Tasks";
 import Habit from "./pages/Habit";
 import Analytics from "./pages/Analytics";
 import Today from "./pages/Today";
+import Settings from "./pages/Settings";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/habit" element={<Habit/>}/>
         <Route path="/analytics" element={<Analytics/>}/>
         <Route path="/today" element={<Today/>}/>
+        <Route path="/settings" element={<Settings/>}/>
       </Routes>
   );
 }

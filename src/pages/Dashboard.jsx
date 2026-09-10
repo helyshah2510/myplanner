@@ -50,10 +50,6 @@ function Dashboard() {
                         </section>
 
                         <section className="dashboard-card">
-                            <h2>Current Streak</h2>
-                        </section>
-
-                        <section className="dashboard-card">
                             <QuickNote/>
                         </section>
 
