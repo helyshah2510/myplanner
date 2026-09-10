@@ -6,6 +6,7 @@ import Login from "./pages/Auth/Login";
 import Journal from "./pages/Journal";
 import Tasks from "./pages/Tasks";
 import Habit from "./pages/Habit";
+import Analytics from "./pages/Analytics";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/journal" element={<Journal/>}/>
         <Route path="/tasks" element={<Tasks/>}/>
         <Route path="/habit" element={<Habit/>}/>
+        <Route path="/analytics" element={<Analytics/>}/>
       </Routes>
   );
 }

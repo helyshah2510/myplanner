@@ -1,0 +1,55 @@
+.habit-analytics {
+    margin-top: 30px;
+}
+
+.habit-analytics h2 {
+    margin-bottom: 4px;
+}
+
+.overall-completion {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+.habit-stat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.habit-stat {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #eee;
+}
+
+.habit-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.habit-icon {
+    font-size: 1.5rem;
+}
+
+.habit-detail {
+    min-width: 130px;
+}
+
+.habit-detail span {
+    display: block;
+    color: #666;
+    font-size: 14px;
+}
+
+.habit-detail strong {
+    display: block;
+    margin-top: 4px;
+    font-size: 20px;
+}

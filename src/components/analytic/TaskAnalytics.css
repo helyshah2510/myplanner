@@ -1,0 +1,46 @@
+.task-analytics {
+    margin-top: 10px;
+}
+
+.task-analytics h2 {
+    margin-bottom: 16px;
+}
+
+.task-stat {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    width: 30%;
+    margin-right: 16px;
+    padding: 20px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #eee;
+    box-sizing: border-box;
+}
+
+.task-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--color-accent-tint);
+    color: var(--color-accent-dark);
+    border-radius: 50%;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.task-stat strong {
+    display: block;
+    font-size: 24px;
+}
+
+.task-stat span {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+    font-size: 14px;
+}

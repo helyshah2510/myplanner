@@ -42,6 +42,11 @@ function HabitForm({
             return;
         }
 
+        if (frequency === "custom" && customDays.length === 0) {
+            alert("Please select at least one day.");
+            return;
+        }
+
         onSaveHabit({
             name: name,
             icon: icon,

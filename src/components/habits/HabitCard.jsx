@@ -60,8 +60,13 @@ function HabitCard({
                             habit.completed
                                 ? "checked"
                                 : ""
+                        }${
+                            !habit.scheduledToday
+                                ? "disabled"
+                                : ""
                         }`}
                         onClick={() => onToggle(habit.id)}
+                        disabled={!habit.scheduledToday}
                     >
                         {habit.completed ? "✓" : ""}
                     </button>
@@ -148,17 +153,19 @@ function HabitCard({
                 <div className="habit-week-progress">
 
                     {habit.weeklyProgress.map(
-                        (completed, index) => (
+                        (day, index) => (
 
                             <div
                                 key={index}
                                 className={`habit-day ${
-                                    completed
+                                    day.completed
                                         ? "completed"
-                                        : ""
+                                        : !day.scheduled
+                                            ?"not-scheduled"
+                                            :""
                                 }`}
                             >
-                                {completed ? "✓" : ""}
+                                {day.completed ? "✓" : ""}
                             </div>
 
                         )

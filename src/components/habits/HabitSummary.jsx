@@ -3,10 +3,13 @@ import "./HabitSummary.css";
 function HabitSummary({ habits }) {
 
     const activeHabits = habits.filter((habit) => !habit.paused);
+    const scheduledHabits = activeHabits.filter(
+        (habit) => habit.scheduledToday
+    );
 
-    const total = activeHabits.length;
+    const total = scheduledHabits.length;
 
-    const completed = activeHabits.filter(
+    const completed = scheduledHabits.filter(
         (habit) => habit.completed
     ).length;
 
@@ -14,7 +17,7 @@ function HabitSummary({ habits }) {
         ? 0
         : Math.round((completed / total) * 100);
 
-    const bestStreak = total === 0
+    const bestStreak = activeHabits.length=== 0
         ? 0
         : Math.max(
             ...activeHabits.map((habit) => habit.best_streak)

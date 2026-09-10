@@ -1,0 +1,44 @@
+.analytics-summary {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.analytics-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 20px;
+    border-radius: 16px;
+    background: white;
+    border: 1px solid #eee;
+}
+
+
+.analytic-icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  background: var(--color-accent-tint);
+  color: var(--color-accent-dark);
+  border-radius: 50%;
+
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.analytics-card strong {
+    display: block;
+    font-size: 24px;
+}
+
+.analytics-card span {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+    font-size: 14px;
+}

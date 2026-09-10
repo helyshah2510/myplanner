@@ -1,0 +1,12 @@
+.analytic-layout {
+    display: flex;
+    min-height: 100vh;
+    background: var(--color-background);
+}
+
+.analytic-main {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 30px;
+}
