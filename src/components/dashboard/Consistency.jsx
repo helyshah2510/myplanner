@@ -8,6 +8,15 @@ import {
     getHabitLogsInRange,
     isHabitScheduledOnDate
 } from "../../lib/habit";
+import {
+    LineChart,
+    Line,
+    XAxis,
+    YAxis,
+    CartesianGrid,
+    Tooltip,
+    ResponsiveContainer
+} from "recharts";
 
 function Consistency() {
 
@@ -132,31 +141,37 @@ function Consistency() {
                 <span>This Week</span>
             </div>
 
-            <div className="consistency-list">
+            <div className="consistency-chart">
 
-                {dailyData.map(day => (
-                    <div
-                        className="consistency-day"
-                        key={day.day}
-                    >
-                        <span>{day.day}</span>
+                <ResponsiveContainer width="100%" height={250}>
+                    <LineChart data={dailyData}>
+                        <CartesianGrid vertical={false} />
+                        
+                        <XAxis
+                            dataKey="day"
+                        />
 
-                        <div className="consistency-bar">
-                            <div
-                                style={{
-                                    width: `${day.percentage}%`
-                                }}
-                            />
-                        </div>
+                        <YAxis
+                            domain={[0, 100]}
+                            tickFormatter={value => `${value}%`}
+                        />
 
-                        <strong>
-                            {day.percentage}%
-                        </strong>
-                    </div>
-                ))}
+                        <Tooltip
+                            formatter={value => [`${value}%`, "Completion"]}
+                        />
+
+                        <Line
+                            type="monotone"
+                            dataKey="percentage"
+                            stroke="#E98291"
+                            strokeWidth={2}
+                            dot={{ r: 4 }}
+                            activeDot={{ r: 5 }}
+                        />
+                    </LineChart>
+                </ResponsiveContainer>
 
             </div>
-
         </section>
     );
 }

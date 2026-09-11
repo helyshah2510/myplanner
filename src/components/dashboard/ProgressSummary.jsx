@@ -9,6 +9,12 @@ import {
     isHabitScheduledOnDate
 } from "../../lib/habit";
 
+import {
+    PieChart,
+    Pie,
+    Cell
+} from "recharts";
+
 function ProgressSummary() {
 
     const [completed, setCompleted] = useState(0);
@@ -140,6 +146,17 @@ function ProgressSummary() {
             : Math.round(
                 (completed / total) * 100
             );
+    
+    const chartData = [
+        {
+            name: "Completed",
+            value: completed
+        },
+        {
+            name: "Pending",
+            value: pending
+        }
+    ];
 
     return (
         <section className="progress-summary">
@@ -149,8 +166,31 @@ function ProgressSummary() {
                 <span>This Week</span>
             </div>
 
-            <div className="progress-percent">
-                {percentage}%
+            <div className="progress-chart">
+
+                <PieChart width={180} height={180}>
+                    <Pie
+                        data={chartData}
+                        dataKey="value"
+                        nameKey="name"
+                        cx="50%"
+                        cy="50%"
+                        innerRadius={55}
+                        outerRadius={75}
+                        paddingAngle={2}
+                        startAngle={90}
+                        endAngle={-270}
+                    >
+                        <Cell fill="#A8C3A0"/>
+                        <Cell fill="#F3C6CF"/>
+                    </Pie>
+                </PieChart>
+
+                <div className="progress-percent">
+                    {percentage}%
+                    <span>Completed</span>
+                </div>
+
             </div>
 
             <div className="progress-stats">

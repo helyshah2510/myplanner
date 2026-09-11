@@ -31,7 +31,7 @@ function Login() {
       return;
     }
 
-    console.log("Logged in user:", data.user);
+    //console.log("Logged in user:", data.user);
 
     navigate("/dashboard");
   }

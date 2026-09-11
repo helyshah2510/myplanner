@@ -20,36 +20,6 @@
     font-size: 14px;
 }
 
-.consistency-list {
-    margin-top: 24px;
-}
-
-.consistency-day {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 14px;
-}
-
-.consistency-day > span {
-    width: 35px;
-}
-
-.consistency-bar {
-    flex: 1;
-    height: 8px;
-    background: #f1f1f1;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.consistency-bar div {
-    height: 100%;
-    background: var(--color-accent);
-    border-radius: 10px;
-}
-
-.consistency-day strong {
-    width: 40px;
-    text-align: right;
+.consistency-chart {
+    margin-top: 20px;
 }
